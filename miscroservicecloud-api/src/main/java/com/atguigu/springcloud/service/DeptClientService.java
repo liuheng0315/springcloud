@@ -17,7 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 一个实现了FallbackFactory接口的类DeptClientServiceFallbackFact
  */
-@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+//@FeignClient(value = "MICROSERVICECLOUD-DEPT")
+@FeignClient(value = "MICROSERVICECLOUD-DEPT",fallbackFactory=DeptClientServiceFallbackFactory.class)
 public interface DeptClientService
 {
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)

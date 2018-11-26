@@ -1,13 +1,8 @@
 package com.atguigu.springcloud.entities;
 
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.Accessors;
 
-@NoArgsConstructor
-@Data
-@Accessors(chain=true)
+
 public class Dept {
 	private Long 	deptno; // 主键
 	private String 	dname; // 部门名称
@@ -15,5 +10,40 @@ public class Dept {
 	public Dept(String dname) {
 		super();
 		this.dname = dname;
+	}
+
+	public Dept() {
+		super();
+	}
+
+	public Dept(Long deptno, String dname, String db_source) {
+		super();
+		this.deptno = deptno;
+		this.dname = dname;
+		this.db_source = db_source;
+	}
+
+	public Long getDeptno() {
+		return deptno;
+	}
+
+	public void setDeptno(Long deptno) {
+		this.deptno = deptno;
+	}
+
+	public String getDname() {
+		return dname;
+	}
+
+	public void setDname(String dname) {
+		this.dname = dname;
+	}
+
+	public String getDb_source() {
+		return db_source;
+	}
+
+	public void setDb_source(String db_source) {
+		this.db_source = db_source;
 	}
 }
